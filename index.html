@@ -10,11 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Gloves Kenya - Premium unisex tactical and riding gloves engineered for motorcycle commuters and cyclists. Size Large (L) only at KSh 2,000.">
-    <meta name="keywords" content="Gloves Kenya, motorcycle gloves, cycling gloves, tactical gear, riding gear, Nairobi, Kenya">
-    <meta name="author" content="Gloves Kenya">
-
     <style>
         :root {
             --bg-body: #f5f5f7;
@@ -29,7 +24,6 @@
             --glass-nav: rgba(245, 245, 247, 0.88);
             --radius-lg: 24px;
             --radius-md: 14px;
-            --radius-sm: 8px;
             --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.04);
             --shadow-card-hover: 0 20px 45px rgba(0, 0, 0, 0.09);
         }
@@ -644,7 +638,7 @@
     <!-- Apple Navigation Bar -->
     <nav>
         <a href="#" class="nav-logo">
-            <img src="1791954367860.jpg" alt="Gloves Kenya Logo" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=100&q=80'">
+            <img src="./1791954367860.jpg" alt="Gloves Kenya Logo">
             <span>Gloves <span>Kenya</span></span>
         </a>
         <div class="nav-actions">
@@ -681,4 +675,16 @@
             <input type="text" id="searchInput" class="search-input" placeholder="Search glove features or models..." onkeyup="filterProducts()">
         </div>
         <div class="filter-wrapper">
-            <button class="filter-btn active" onclick="setCategory(
+            <button class="filter-btn active" onclick="setCategory('all', this)">All Models (6)</button>
+            <button class="filter-btn" onclick="setCategory('riding', this)">Riding & Moto</button>
+            <button class="filter-btn" onclick="setCategory('cycling', this)">Cycling & Trail</button>
+            <button class="filter-btn" onclick="setCategory('weather', this)">Weather Shield</button>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <main class="container">
+        <div class="grid" id="productGrid">
+
+            <!-- Card 1 -->
+            <div class="pro
