@@ -10,9 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Google Search Console Placeholder -->
-    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE">
-
     <style>
         :root {
             --bg-body: #f5f5f7;
@@ -354,12 +351,25 @@
             justify-content: space-between;
         }
 
+        .card-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             letter-spacing: -0.015em;
-            margin-bottom: 8px;
             color: var(--text-primary);
+        }
+
+        .card-price {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #d70015;
+            letter-spacing: -0.02em;
         }
 
         .card-desc {
@@ -644,12 +654,12 @@
         <p class="hero-subhead">Engineered unisex tactical and riding gloves crafted for daily motorcycle commutes, road cycling, and extreme outdoor fitness across Kenya.</p>
         
         <div class="size-pill-bar" onclick="openSizeGuide()">
-            <span>📏 Exclusive Stock: <strong>Size Large (L) Only</strong></span>
+            <span>📏 Exclusive Stock: <strong>Size Large (L) Only</strong> | KSh 2,000 Each</span>
             <span>&rsaquo;</span>
         </div>
 
         <div class="hero-cta-group">
-            <a href="https://wa.me/254746754003?text=Hello%20Gloves%20Kenya,%20I%20would%20like%20to%20order%20Large%20size%20gloves." class="btn-apple-primary" target="_blank">
+            <a href="https://wa.me/254746754003?text=Hello%20Gloves%20Kenya,%20I%20would%20like%20to%20order%20Large%20size%20gloves%20at%20KSh%202,000." class="btn-apple-primary" target="_blank">
                 Order via WhatsApp
             </a>
             <a href="tel:0746754003" class="btn-apple-secondary">
@@ -677,5 +687,4 @@
         <div class="grid" id="productGrid">
 
             <!-- Card 1 -->
-            <div class="product-card" data-category="riding" data-keywords="pro rider all weather leather gloves motorcycle">
-                <div class="card-media" onclick="openLightbox('1791961182001.jpg', 'Pro-Rider All-Weather Leath
+            <div class=
