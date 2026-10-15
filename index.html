@@ -1,227 +1,605 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gloves Kenya | All-Weather Riding & Sports Gloves</title>
+    <title>Gloves Kenya | Premium All-Weather Riding & Tactical Gear</title>
     
     <!-- Google Search Console Verification Meta Tag Placeholder -->
-    <!-- Replace "YOUR_VERIFICATION_CODE_HERE" with your code from Google Search Console when ready -->
     <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE">
 
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <style>
+        :root {
+            --bg-obsidian: #07090e;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-border: rgba(255, 255, 255, 0.1);
+            --accent-gold: #fbbf24;
+            --accent-copper: #d97706;
+            --accent-glow: rgba(251, 191, 36, 0.25);
+            --accent-crimson: #e11d48;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --whatsapp-green: #25d366;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-obsidian);
+            color: var(--text-main);
             line-height: 1.6;
+            padding-bottom: 70px; /* Offset for mobile sticky bar */
+            overflow-x: hidden;
         }
+
+        /* Typography */
+        h1, h2, h3, .font-serif {
+            font-family: 'Outfit', 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Subtle Background Glow Effect */
+        .ambient-glow {
+            position: fixed;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, rgba(225, 29, 72, 0.05) 50%, transparent 70%);
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Top Navigation Header */
         header {
-            background-color: #0f172a;
-            color: #ffffff;
-            padding: 40px 20px;
+            background: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--bg-card-border);
+            padding: 30px 20px 40px;
             text-align: center;
-            border-bottom: 4px solid #e11d48;
+            position: relative;
         }
-        .title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-        .title span {
-            color: #e11d48;
-        }
-        .subtitle {
-            font-size: 1rem;
-            color: #cbd5e1;
-            max-width: 600px;
-            margin: 0 auto 20px;
-        }
-        .size-badge-header {
-            display: inline-block;
-            background-color: rgba(225, 29, 72, 0.2);
-            color: #f43f5e;
-            border: 1px solid #e11d48;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        .btn-group {
+
+        .top-badge-bar {
             display: flex;
             gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #ffffff;
-        }
-        .btn-wa { background-color: #25d366; }
-        .btn-call { background-color: #e11d48; }
-        
-        .container {
-            padding: 30px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .section-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #0f172a;
-            border-bottom: 3px solid #e11d48;
-            display: inline-block;
-            padding-bottom: 4px;
-        }
-        
-        /* Product Cards Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #1e293b;
-        }
-        .card-content {
-            padding: 20px;
-            flex-grow: 1;
-        }
-        .card-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            color: #0f172a;
-        }
-        .card-content p {
-            font-size: 0.95rem;
-            color: #64748b;
-            margin-bottom: 15px;
-        }
-        .spec-tag {
-            display: inline-block;
-            background-color: #f1f5f9;
-            color: #0f172a;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 6px;
-            border: 1px solid #cbd5e1;
+            margin-bottom: 18px;
         }
 
-        .contact-box {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        .contact-detail {
-            font-size: 1.2rem;
+        .badge-pill {
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            color: var(--accent-gold);
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
             font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .badge-pill.highlight {
+            background: rgba(225, 29, 72, 0.15);
+            border-color: rgba(225, 29, 72, 0.5);
+            color: #f43f5e;
+        }
+
+        .brand-logo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .brand-logo span {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-copper));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 25px;
+            font-weight: 300;
+        }
+
+        /* Primary Action Buttons */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-luxury {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-wa {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-call {
+            background: linear-gradient(135deg, var(--accent-copper) 0%, #b45309 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-call:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(217, 119, 6, 0.5);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), transparent);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Glassmorphism Product Gallery */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--bg-card-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(251, 191, 36, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            background: #0f172a;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .glass-card:hover .card-img {
+            transform: scale(1.06);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(7, 9, 14, 0.85);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 22px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .spec-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .spec-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            font-size: 0.78rem;
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+
+        .card-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        /* Craftsmanship & Feature Showcase */
+        .craft-box {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.5) 100%);
+            border: 1px solid var(--bg-card-border);
+            border-radius: var(--radius-lg);
+            padding: 35px 25px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .craft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .craft-item {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .craft-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-copper));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .craft-title {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .craft-desc {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* Sizing & Precision Fit Box */
+        .sizing-box {
+            background: rgba(225, 29, 72, 0.05);
+            border: 1px solid rgba(225, 29, 72, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .size-highlight {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-main);
             margin: 10px 0;
         }
-        .contact-detail a {
-            color: #0f172a;
-            text-decoration: none;
+
+        .size-highlight span {
+            color: #f43f5e;
+        }
+
+        .sizing-metric {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .metric-pill {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Image Modal Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 9, 14, 0.92);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #0f172a;
+            border: 1px solid var(--accent-gold);
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            animation: modalUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--accent-crimson);
+        }
+
+        /* Mobile Sticky Quick Action Bar */
+        .mobile-sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(7, 9, 14, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid var(--bg-card-border);
+            padding: 12px 16px;
+            display: flex;
+            gap: 10px;
+            z-index: 999;
+            box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-sticky-bar .btn-luxury {
+            flex: 1;
+            padding: 12px 10px;
+            font-size: 0.88rem;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            background: #0f172a;
-            color: #94a3b8;
+            padding: 30px 20px;
+            border-top: 1px solid var(--bg-card-border);
+            color: var(--text-muted);
             font-size: 0.85rem;
+            background: #040609;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 640px) {
+            .brand-logo { font-size: 2.2rem; }
+            .section-title { font-size: 1.6rem; }
+            .container { padding: 25px 15px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="ambient-glow"></div>
+
+    <!-- Header Section -->
     <header>
-        <div class="title">Gloves <span>Kenya</span></div>
-        <div class="subtitle">All-Weather Unisex Protective Gloves for Motorcycling, Cycling & Outdoor Fitness</div>
-        <div class="size-badge-header">📏 Available Size: Large (L) Only</div>
+        <div class="top-badge-bar">
+            <span class="badge-pill">EST. KENYA</span>
+            <span class="badge-pill highlight">SIZE: LARGE (L) EXCLUSIVE</span>
+            <span class="badge-pill">ALL-WEATHER GEAR</span>
+        </div>
+        <h1 class="brand-logo">GLOVES <span>KENYA</span></h1>
+        <p class="hero-tagline">
+            Engineered for Kenya's roads and weather. Premium all-weather tactical, riding, and sports utility gloves for ultimate grip and hand protection.
+        </p>
+
         <div class="btn-group">
-            <a href="https://wa.me/254746754003?text=Hello%20Gloves%20Kenya,%20I%20would%20like%20to%20inquire%20about%20your%20Large%20size%20gloves." class="btn btn-wa" target="_blank">Order on WhatsApp</a>
-            <a href="tel:0746754003" class="btn btn-call">Call 0746754003</a>
+            <a href="https://wa.me/254746754003?text=Hello%20Gloves%20Kenya,%20I%20would%20like%20to%20order%20the%20All-Weather%20Protective%20Gloves%20(Size%20L)." class="btn-luxury btn-wa" target="_blank">
+                💬 Order via WhatsApp
+            </a>
+            <a href="tel:0746754003" class="btn-luxury btn-call">
+                📞 Call Direct: 0746 754 003
+            </a>
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
 
-        <h2 class="section-title">Our Gear Collection</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://via.placeholder.com/400x300/0f172a/ffffff?text=Motorcycle+Riding+Gloves" alt="Motorcycle Riding Gloves" class="card-img">
-                <div class="card-content">
-                    <h3>🏍️ Motorcycling & Riding</h3>
-                    <p>Enhanced vibration dampening, reinforced knuckle/palm grip, and all-weather wind resistance for commuting and long rides.</p>
-                    <span class="spec-tag">Size: Large (L)</span>
+        <!-- Product Gallery Section -->
+        <section id="gallery">
+            <div class="section-header">
+                <h2 class="section-title">Exclusive Collection</h2>
+                <p class="section-subtitle">Tap any glove model to view full high-resolution details</p>
+            </div>
+
+            <div class="product-grid">
+                
+                <!-- Card 1 -->
+                <div class="glass-card" onclick="openModal('glove1.jpg', 'Pro-Rider All-Weather Leather', 'Designed for maximum handlebar grip, impact padding, and dampening engine vibration on long highway rides.', 'Size: Large (L)', 'Motorcycling / Biking')">
+                    <div class="card-img-wrapper">
+                        <img src="glove1.jpg" alt="Pro-Rider All-Weather Leather" class="card-img" onerror="handleImgError(this, 'Motorcycle Riding')">
+                        <span class="card-tag">RIDING GEAR</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Pro-Rider All-Weather</h3>
+                        <p class="card-desc">Enhanced vibration dampening, impact-resistant knuckles, and rain shield layer.</p>
+                        <div class="spec-pills">
+                            <span class="spec-pill">Size: Large (L)</span>
+                            <span class="spec-pill">Vibration Shield</span>
+                        </div>
+                        <div class="card-action">
+                            <span>Tap to Preview</span>
+                            <span>➔</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://via.placeholder.com/400x300/0f172a/ffffff?text=Cycling+%26+Bicycle+Gloves" alt="Cycling Gloves" class="card-img">
-                <div class="card-content">
-                    <h3>🚴 Bicycle Rides & Cycling</h3>
-                    <p>Ergonomic anti-slip grip design to maintain full control over handlebars and prevent hand fatigue on trail or road rides.</p>
-                    <span class="spec-tag">Size: Large (L)</span>
+                <!-- Card 2 -->
+                <div class="glass-card" onclick="openModal('glove2.jpg', 'Tactical & Trail Utility', 'Ergonomic non-slip palm material ideal for bicycle handling, mountain biking trails, and outdoor sports.', 'Size: Large (L)', 'Cycling & Outdoor')">
+                    <div class="card-img-wrapper">
+                        <img src="glove2.jpg" alt="Tactical & Trail Utility" class="card-img" onerror="handleImgError(this, 'Trail Utility')">
+                        <span class="card-tag">CYCLING</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Tactical & Trail Utility</h3>
+                        <p class="card-desc">Anti-slip palm weave engineered to maintain complete handlebar response.</p>
+                        <div class="spec-pills">
+                            <span class="spec-pill">Size: Large (L)</span>
+                            <span class="spec-pill">Anti-Slip Grip</span>
+                        </div>
+                        <div class="card-action">
+                            <span>Tap to Preview</span>
+                            <span>➔</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://via.placeholder.com/400x300/0f172a/ffffff?text=Outdoor+Runs+%26+Fitness" alt="Outdoor Fitness Gloves" class="card-img">
-                <div class="card-content">
-                    <h3>🏃 Outdoor Runs & Fitness</h3>
-                    <p>Breathable thermal regulation keeps hands warm in cold wind or rain without overheating during intensive outdoor workouts.</p>
-                    <span class="spec-tag">Size: Large (L)</span>
+                <!-- Card 3 -->
+                <div class="glass-card" onclick="openModal('glove3.jpg', 'Thermal Weather Shield', 'Breathable multi-layer wind blocking fabric designed for cold early morning rides and rainy workouts.', 'Size: Large (L)', 'Cold & Rain Shield')">
+                    <div class="card-img-wrapper">
+                        <img src="glove3.jpg" alt="Thermal Weather Shield" class="card-img" onerror="handleImgError(this, 'Weather Shield')">
+                        <span class="card-tag">WIND & RAIN</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Thermal Weather Shield</h3>
+                        <p class="card-desc">Water-resistant shell keeping hands warm and dry in wet Kenyan weather.</p>
+                        <div class="spec-pills">
+                            <span class="spec-pill">Size: Large (L)</span>
+                            <span class="spec-pill">Water Resistant</span>
+                        </div>
+                        <div class="card-action">
+                            <span>Tap to Preview</span>
+                            <span>➔</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <h2 class="section-title">Contact & Orders</h2>
-        <div class="contact-box">
-            <p style="margin-bottom: 10px;">Ready to order or have questions about Large size fitting or pricing?</p>
-            <div class="contact-detail">📞 <a href="tel:0746754003">0746 754 003</a></div>
-            <div class="contact-detail" style="font-size: 1rem; color: #2563eb;">✉️ <a href="mailto:gloveskenya2@gmail.com">gloveskenya2@gmail.com</a></div>
-            <div class="btn-group" style="margin-top: 15px;">
-                <a href="https://wa.me/254746754003?text=Hello%20Gloves%20Kenya,%20I%20have%20an%20inquiry%20about%20your%20Large%20size%20gloves." class="btn btn-wa" target="_blank">Chat on WhatsApp</a>
-                <a href="tel:0746754003" class="btn btn-call">Call Now</a>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Gloves Kenya. All Rights Reserved. Powered by GitHub Pages.</p>
-    </footer>
-
-</body>
-</html>
+                <!-- Card 4 -->
+                <div class="glass-card" onclick="openModal('glove4.jpg', 'Reinforced Knuckle Edition', 'Heavy-duty armor structure with flex-fit joints for tactical security and maximum knuckle safety.', 'Size:
