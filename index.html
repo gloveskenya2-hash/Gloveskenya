@@ -58,7 +58,7 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-subtle);
-            padding: 14px 28px;
+            padding: 12px 28px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -72,10 +72,18 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
         }
 
-        .nav-logo span {
+        .nav-logo img {
+            height: 36px;
+            width: 36px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .nav-logo span span {
             color: var(--accent-red);
         }
 
@@ -617,9 +625,12 @@
 </head>
 <body>
 
-    <!-- Apple Navigation Bar -->
+    <!-- Apple Navigation Bar with Logo -->
     <nav>
-        <a href="#" class="nav-logo">Gloves <span>Kenya</span></a>
+        <a href="#" class="nav-logo">
+            <img src="1791954367860.jpg" alt="Gloves Kenya Logo">
+            <span>Gloves <span>Kenya</span></span>
+        </a>
         <div class="nav-actions">
             <button onclick="openSizeGuide()" class="btn-apple-subtle">📏 Size Guide</button>
             <a href="https://wa.me/254746754003" class="btn-apple-subtle" target="_blank">💬 WhatsApp</a>
@@ -667,8 +678,4 @@
 
             <!-- Card 1 -->
             <div class="product-card" data-category="riding" data-keywords="pro rider all weather leather gloves motorcycle">
-                <div class="card-media" onclick="openLightbox('1791961182001.jpg', 'Pro-Rider All-Weather Leather Gloves')">
-                    <span class="card-badge">Model #1</span>
-                    <img src="1791961182001.jpg" alt="Pro-Rider All-Weather Leather Gloves" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80'">
-                </div>
-                
+                <div class="card-media" onclick="openLightbox('1791961182001.jpg', 'Pro-Rider All-Weather Leath
